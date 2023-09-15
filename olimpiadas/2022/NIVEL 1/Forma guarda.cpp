@@ -38,6 +38,31 @@ int main(){
 	int N;
 	string tipo, patron;
 	cin >> N >> tipo >> patron;
+	
+	for(int i = 0  ; i< patron.size() ; i++)if(!(patron[i] >= 'a' && patron[i] <= 'z')){
+		system("cls");
+		cout << "El patron debe contener solo letras mininusculas";
+		return 0;
+	}
+	
+	if(patron.size() <= 0){
+		system("cls");
+		cout << "El patron no puede tener 0 cuadros o menos";
+		return 0;
+	}
+	
+	if(tipo != "NORMAL" && tipo !="ESPEJADO"){
+		system("cls");
+		cout << "El tipo solo puede ser NORMAL o ESPEJADO";
+		return 0;
+	}
+	
+	if(N >= 1000){
+		system("cls");
+		cout << "La guarda no puede medir mas o igualar los 1000 cuadrados";
+		return 0;
+	}
+	
 	cout << formaguarda(N, tipo, patron);
 	return 0;
 }
